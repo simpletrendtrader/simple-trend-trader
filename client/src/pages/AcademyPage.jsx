@@ -8,7 +8,7 @@ export default function AcademyPage() {
       <SectionTitle
         eyebrow="Academy"
         title="Teach The Process Behind Every Setup"
-        description="This section frames SIMPLE TREND TRADER as a brand that educates, not just signals. Keep the tone clear, premium, and confidence-building."
+        description="This section now supports real YouTube lessons. To update it, edit the lesson title, description, and video URL inside client/src/data/siteContent.js."
       />
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {lessonTracks.map((lesson) => (
