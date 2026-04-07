@@ -1,7 +1,7 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import logo from '../assets/stt-logo.svg';
+import logo from '../assets/stt-logo.png';
 import LiveTicker from './LiveTicker.jsx';
 
 const navItems = [
@@ -24,9 +24,9 @@ export default function PublicLayout() {
         <header className="glass-panel panel-depth mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="min-w-0">
-              <div className="flex items-center gap-3">
-                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-gold/20 bg-white p-1 shadow-gold">
-                  <img src={logo} alt="Simple Trend Trader logo" className="h-full w-full object-contain" />
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center rounded-[1.6rem] border border-gold/15 bg-white/95 px-3 py-2 shadow-gold">
+                  <img src={logo} alt="Simple Trend Trader logo" className="h-12 w-auto object-contain sm:h-14" />
                 </div>
                 <div>
                   <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
