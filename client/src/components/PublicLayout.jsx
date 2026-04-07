@@ -32,8 +32,15 @@ export default function PublicLayout() {
         <header className="glass-panel panel-depth mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="min-w-0">
-              <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
-              <p className="mt-1 text-sm text-slate-400">Trade Smart. Trade Simple.</p>
+              <div className="flex items-center gap-3">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/20 bg-gold/10">
+                  <span className="font-display text-lg text-gold">ST</span>
+                </div>
+                <div>
+                  <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
+                  <p className="mt-1 text-sm text-slate-400">Trade Smart. Trade Simple.</p>
+                </div>
+              </div>
             </Link>
 
             <nav className="hidden items-center gap-2 lg:flex">

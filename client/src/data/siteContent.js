@@ -106,3 +106,15 @@ export const memberships = [
     features: ['Detailed setup logic', 'Deep-dive lessons', 'Private member positioning']
   }
 ];
+
+export const weeklyNote = {
+  issue: 'Weekly Market Note / Issue 07',
+  title: 'Patience is the edge when the market is forcing weak conviction.',
+  summary:
+    'This week the focus is not on chasing every move. It is on waiting for clean acceptance, respecting invalidation quickly, and treating trade selection like curation.',
+  bullets: [
+    'Gold remains strongest when higher lows hold with intent.',
+    'Bitcoin still needs acceptance after the reclaim, not emotion.',
+    'FX ideas should stay selective while momentum stays uneven.'
+  ]
+};

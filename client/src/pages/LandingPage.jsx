@@ -3,7 +3,7 @@ import { ArrowRight, ChartNoAxesCombined, GraduationCap, NotebookPen, Radar, Spa
 import { Link } from 'react-router-dom';
 import IdeaSpotlightCard from '../components/IdeaSpotlightCard.jsx';
 import LessonPreviewCard from '../components/LessonPreviewCard.jsx';
-import { featuredIdeas, lessonTracks, manifesto, pillars, stats } from '../data/siteContent.js';
+import { featuredIdeas, lessonTracks, manifesto, pillars, stats, weeklyNote } from '../data/siteContent.js';
 
 const featureCards = [
   { title: 'Trade Idea Publishing', copy: 'Present market ideas with context, invalidation, and clear educational framing.', icon: ChartNoAxesCombined },
@@ -20,11 +20,11 @@ export default function LandingPage() {
           <p className="inline-flex rounded-full border border-neon/20 bg-neon/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neon">
             Website-First Trading Brand
           </p>
-          <p className="editorial-kicker mt-6 text-3xl text-gold">For traders who want calm, clean conviction.</p>
+          <p className="editorial-kicker mt-6 text-2xl text-gold sm:text-3xl">For traders who want calm, clean conviction.</p>
           <h1 className="mt-4 max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white md:text-7xl">
             A modern trading website for publishing market ideas with style, clarity, and premium presence.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
             SIMPLE TREND TRADER is now positioned as a polished educational brand site: a place to share trade
             ideas, explain your thinking, build audience trust, and introduce a future VIP path without needing
             complex infrastructure first.
@@ -43,6 +43,11 @@ export default function LandingPage() {
             <Link to="/contact" className="rounded-full border border-white/10 px-6 py-3 font-medium text-white">
               Contact / Join
             </Link>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            <SignalChip label="Publishing style" value="Educational first" />
+            <SignalChip label="Brand mood" value="Calm / premium" />
+            <SignalChip label="Use case" value="Trade ideas + academy" />
           </div>
         </div>
 
@@ -87,6 +92,24 @@ export default function LandingPage() {
             </div>
           );
         })}
+      </section>
+
+      <section className="mt-12 grid gap-6 lg:grid-cols-[0.86fr,1.14fr]">
+        <div className="glass-panel panel-depth rounded-[2rem] p-8 shadow-gold">
+          <p className="text-xs uppercase tracking-[0.35em] text-gold">{weeklyNote.issue}</p>
+          <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold leading-tight text-white">
+            {weeklyNote.title}
+          </h2>
+          <p className="mt-5 text-sm leading-7 text-slate-300">{weeklyNote.summary}</p>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {weeklyNote.bullets.map((item) => (
+            <div key={item} className="glass-panel panel-depth rounded-[1.8rem] p-5">
+              <p className="text-xs uppercase tracking-[0.28em] text-neon">Market Note</p>
+              <p className="mt-4 text-sm leading-7 text-slate-200">{item}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="mt-12 grid gap-10 lg:grid-cols-[0.92fr,1.08fr] lg:items-center">
@@ -149,7 +172,7 @@ export default function LandingPage() {
       </section>
 
       <section className="mt-12">
-        <div className="mb-6 flex items-end justify-between gap-4">
+        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-gold">Education</p>
             <h2 className="mt-4 font-display text-4xl font-semibold text-white">Build authority through simple, elegant teaching tracks.</h2>
@@ -164,6 +187,15 @@ export default function LandingPage() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function SignalChip({ label, value }) {
+  return (
+    <div className="rounded-[1.3rem] border border-white/10 bg-black/20 px-4 py-3">
+      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-500">{label}</p>
+      <p className="mt-2 text-sm text-white">{value}</p>
     </div>
   );
 }
