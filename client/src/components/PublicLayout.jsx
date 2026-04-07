@@ -1,7 +1,8 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { Link, NavLink, Outlet } from 'react-router-dom';
-import { marketTape } from '../data/siteContent.js';
+import logo from '../assets/stt-logo.svg';
+import LiveTicker from './LiveTicker.jsx';
 
 const navItems = [
   { to: '/', label: 'Home' },
@@ -18,23 +19,14 @@ export default function PublicLayout() {
   return (
     <div className="min-h-screen px-4 pb-10 pt-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="glass-panel overflow-hidden rounded-full border-gold/15 py-3 shadow-gold">
-          <div className="flex min-w-full animate-ticker gap-8 whitespace-nowrap px-6 text-xs uppercase tracking-[0.28em] text-slate-200">
-            {[...marketTape, ...marketTape].map((item, index) => (
-              <span key={`${item}-${index}`}>
-                <span className="mr-3 text-neon">•</span>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
+        <LiveTicker />
 
         <header className="glass-panel panel-depth mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="min-w-0">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-gold/20 bg-gold/10">
-                  <span className="font-display text-lg text-gold">ST</span>
+                <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-gold/20 bg-white p-1 shadow-gold">
+                  <img src={logo} alt="Simple Trend Trader logo" className="h-full w-full object-contain" />
                 </div>
                 <div>
                   <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>

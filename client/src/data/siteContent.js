@@ -1,10 +1,9 @@
-export const marketTape = [
-  'XAUUSD structure bullish above 2358',
-  'BTCUSD waiting for reclaim confirmation',
-  'EURUSD momentum fading into resistance',
-  'Simple execution. Strong risk rules.',
-  'Educational insights updated weekly',
-  'Trade ideas shared with clear context'
+export const marketTapeFallback = [
+  'EURUSD updating...',
+  'GBPUSD updating...',
+  'USDJPY updating...',
+  'XAUUSD updating...',
+  'BTCUSD updating...'
 ];
 
 export const featuredIdeas = [
