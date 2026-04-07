@@ -86,6 +86,12 @@ export const stats = [
   { label: 'Brand Style', value: 'Modern Editorial' }
 ];
 
+export const manifesto = [
+  'Trade ideas should teach the story behind the setup.',
+  'A premium brand is built through clarity, not clutter.',
+  'Execution gets simpler when the framework stays simple.'
+];
+
 export const memberships = [
   {
     name: 'Open Access',

@@ -29,7 +29,7 @@ export default function PublicLayout() {
           </div>
         </div>
 
-        <header className="glass-panel mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
+        <header className="glass-panel panel-depth mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
           <div className="flex items-center justify-between gap-4">
             <Link to="/" className="min-w-0">
               <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
@@ -95,13 +95,16 @@ export default function PublicLayout() {
 
         <Outlet />
 
-        <footer className="glass-panel mt-10 rounded-[2rem] px-6 py-8">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr,0.9fr]">
+        <footer className="glass-panel panel-depth mt-10 rounded-[2rem] px-6 py-8">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr,0.95fr]">
             <div>
               <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
               <h2 className="mt-4 max-w-xl font-display text-3xl font-semibold text-white">
                 A modern trading brand focused on clean trade ideas, disciplined execution, and educational clarity.
               </h2>
+              <p className="editorial-kicker mt-4 max-w-lg text-2xl text-slate-300">
+                Built to feel less like a dashboard and more like a serious market publication.
+              </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <FooterLink title="Trade Ideas" copy="Context-rich setups for FX, gold, and crypto." />
@@ -118,7 +121,7 @@ export default function PublicLayout() {
 
 function FooterLink({ title, copy }) {
   return (
-    <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4">
+    <div className="panel-depth rounded-[1.6rem] border border-white/10 bg-white/5 p-4">
       <h3 className="font-semibold text-white">{title}</h3>
       <p className="mt-2 text-sm text-slate-400">{copy}</p>
     </div>
