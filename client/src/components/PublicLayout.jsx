@@ -22,14 +22,14 @@ export default function PublicLayout() {
         <LiveTicker />
 
         <header className="glass-panel panel-depth mt-4 rounded-[2rem] px-5 py-5 shadow-glow">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center justify-between gap-5">
             <Link to="/" className="min-w-0">
               <div className="flex items-center gap-4">
-                <div className="flex items-center justify-center rounded-[1.6rem] border border-gold/15 bg-white/95 px-3 py-2 shadow-gold">
-                  <img src={logo} alt="Simple Trend Trader logo" className="h-12 w-auto object-contain sm:h-14" />
+                <div className="flex items-center justify-center rounded-[1.7rem] border border-gold/20 bg-white/95 px-3 py-2 shadow-gold">
+                  <img src={logo} alt="Simple Trend Trader logo" className="h-14 w-auto object-contain sm:h-16" />
                 </div>
                 <div>
-                  <p className="font-display text-sm uppercase tracking-[0.45em] text-gold">SIMPLE TREND TRADER</p>
+                  <p className="font-display text-sm uppercase tracking-[0.45em] text-gold sm:text-[15px]">SIMPLE TREND TRADER</p>
                   <p className="mt-1 text-sm text-slate-400">Trade Smart. Trade Simple.</p>
                 </div>
               </div>

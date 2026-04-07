@@ -6,6 +6,26 @@ const SYMBOLS = [
   { symbol: 'BTC/USD', label: 'BTCUSD' }
 ];
 
+const formatPrice = (label, value) => {
+  if (label === 'EURUSD' || label === 'GBPUSD') {
+    return value.toFixed(4);
+  }
+
+  if (label === 'USDJPY') {
+    return value.toFixed(2);
+  }
+
+  if (label === 'XAUUSD') {
+    return value.toFixed(2);
+  }
+
+  if (label === 'BTCUSD') {
+    return Math.round(value).toLocaleString();
+  }
+
+  return value.toFixed(2);
+};
+
 export default async function handler(_req, res) {
   const apiKey = process.env.TWELVE_DATA_API_KEY;
 
@@ -26,10 +46,7 @@ export default async function handler(_req, res) {
 
         return {
           symbol: label,
-          display: Number(data.price).toLocaleString(undefined, {
-            minimumFractionDigits: label === 'BTCUSD' ? 0 : 2,
-            maximumFractionDigits: label === 'BTCUSD' ? 0 : 3
-          }),
+          display: formatPrice(label, Number(data.price)),
           raw: Number(data.price)
         };
       })

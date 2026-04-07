@@ -17,8 +17,8 @@ export default function LandingPage() {
     <div className="px-2 py-10">
       <section className="grid gap-10 lg:grid-cols-[1.02fr,0.98fr] lg:items-center">
         <div>
-          <p className="inline-flex rounded-full border border-neon/20 bg-neon/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-neon">
-            Website-First Trading Brand
+          <p className="inline-flex rounded-full border border-gold/20 bg-gold/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-gold">
+            SIMPLE TREND TRADER
           </p>
           <p className="editorial-kicker mt-6 text-2xl text-gold sm:text-3xl">For traders who want calm, clean conviction.</p>
           <h1 className="mt-4 max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white md:text-7xl">
