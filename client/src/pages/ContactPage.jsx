@@ -1,5 +1,6 @@
 import { Mail, MessageSquareMore, Send } from 'lucide-react';
 import SectionTitle from '../components/SectionTitle.jsx';
+import { contactInfo } from '../data/siteContent.js';
 
 const contactBlocks = [
   {
@@ -30,11 +31,19 @@ export default function ContactPage() {
       <div className="grid gap-5 lg:grid-cols-[0.9fr,1.1fr]">
         <div className="glass-panel rounded-[2rem] p-8 shadow-glow">
           <p className="text-xs uppercase tracking-[0.35em] text-neon">Suggested contact setup</p>
-          <h3 className="mt-4 font-display text-4xl text-white">hello@simpletrendtrader.com</h3>
+          <h3 className="mt-4 font-display text-4xl text-white">{contactInfo.email}</h3>
           <p className="mt-4 text-sm leading-7 text-slate-300">
             Replace this with your real email, WhatsApp link, Telegram community link, or newsletter form when
             you are ready to receive traffic from the website.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={contactInfo.primaryCtaHref} target="_blank" rel="noreferrer" className="rounded-full bg-neon px-5 py-3 text-sm font-semibold text-night">
+              {contactInfo.primaryCtaLabel}
+            </a>
+            <a href={contactInfo.secondaryCtaHref} className="rounded-full border border-white/10 px-5 py-3 text-sm text-white">
+              {contactInfo.secondaryCtaLabel}
+            </a>
+          </div>
           <div className="mt-8 rounded-[1.6rem] border border-gold/20 bg-gold/10 p-5 text-sm text-gold">
             Current recommendation: launch the website first, grow audience trust, then connect forms and premium
             access flows in the next phase.

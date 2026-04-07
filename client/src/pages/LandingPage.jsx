@@ -3,7 +3,17 @@ import { ArrowRight, ChartNoAxesCombined, GraduationCap, NotebookPen, Radar, Spa
 import { Link } from 'react-router-dom';
 import IdeaSpotlightCard from '../components/IdeaSpotlightCard.jsx';
 import LessonPreviewCard from '../components/LessonPreviewCard.jsx';
-import { featuredIdeas, lessonTracks, manifesto, pillars, stats, weeklyNote } from '../data/siteContent.js';
+import {
+  contactInfo,
+  dailyTradeIdea,
+  featuredIdeas,
+  lessonTracks,
+  manifesto,
+  pillars,
+  siteBrand,
+  stats,
+  weeklyNote
+} from '../data/siteContent.js';
 
 const featureCards = [
   { title: 'Trade Idea Publishing', copy: 'Present market ideas with context, invalidation, and clear educational framing.', icon: ChartNoAxesCombined },
@@ -18,16 +28,14 @@ export default function LandingPage() {
       <section className="grid gap-10 lg:grid-cols-[1.02fr,0.98fr] lg:items-center">
         <div>
           <p className="inline-flex rounded-full border border-gold/20 bg-gold/10 px-4 py-2 text-xs uppercase tracking-[0.35em] text-gold">
-            SIMPLE TREND TRADER
+            {siteBrand.heroLabel}
           </p>
-          <p className="editorial-kicker mt-6 text-2xl text-gold sm:text-3xl">For traders who want calm, clean conviction.</p>
+          <p className="editorial-kicker mt-6 text-2xl text-gold sm:text-3xl">{siteBrand.heroKicker}</p>
           <h1 className="mt-4 max-w-5xl font-display text-5xl font-semibold leading-[0.95] text-white md:text-7xl">
-            A modern trading website for publishing market ideas with style, clarity, and premium presence.
+            {siteBrand.heroTitle}
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            SIMPLE TREND TRADER is now positioned as a polished educational brand site: a place to share trade
-            ideas, explain your thinking, build audience trust, and introduce a future VIP path without needing
-            complex infrastructure first.
+            {siteBrand.heroDescription}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
@@ -92,6 +100,57 @@ export default function LandingPage() {
             </div>
           );
         })}
+      </section>
+
+      <section className="mt-12 grid gap-6 lg:grid-cols-[0.95fr,1.05fr]">
+        <div className="glass-panel panel-depth rounded-[2rem] p-8 shadow-glow">
+          <p className="text-xs uppercase tracking-[0.35em] text-neon">{dailyTradeIdea.label}</p>
+          <div className="mt-4 flex items-end justify-between gap-4">
+            <div>
+              <h2 className="font-display text-4xl text-white">{dailyTradeIdea.pair}</h2>
+              <p className="mt-2 text-sm uppercase tracking-[0.25em] text-gold">{dailyTradeIdea.dateLabel}</p>
+            </div>
+            <span className="rounded-full border border-gold/20 bg-gold/10 px-4 py-2 text-xs uppercase tracking-[0.24em] text-gold">
+              {dailyTradeIdea.bias}
+            </span>
+          </div>
+          <p className="mt-5 text-sm leading-8 text-slate-300">{dailyTradeIdea.narrative}</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <SignalChip label="Entry Zone" value={dailyTradeIdea.entryZone} />
+            <SignalChip label="Invalidation" value={dailyTradeIdea.invalidation} />
+            <SignalChip label="Targets" value={dailyTradeIdea.targets} />
+          </div>
+          <div className="mt-5 rounded-[1.5rem] border border-white/10 bg-black/20 px-4 py-4 text-sm text-slate-200">
+            {dailyTradeIdea.executionNote}
+          </div>
+        </div>
+        <div className="glass-panel panel-depth rounded-[2rem] p-8 shadow-gold">
+          <p className="text-xs uppercase tracking-[0.35em] text-gold">Join The Brand</p>
+          <h2 className="mt-4 max-w-xl font-display text-4xl font-semibold text-white">
+            Turn visitors into subscribers, community members, and future VIP clients.
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-300">
+            Use this website as your daily publishing hub, your weekly teaching platform, and your premium brand
+            front door. Keep the CTA simple and visible.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={contactInfo.primaryCtaHref}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-neon px-6 py-3 font-semibold text-night"
+            >
+              {contactInfo.primaryCtaLabel}
+              <ArrowRight size={18} />
+            </a>
+            <a
+              href={contactInfo.secondaryCtaHref}
+              className="rounded-full border border-white/10 px-6 py-3 font-medium text-white"
+            >
+              {contactInfo.secondaryCtaLabel}
+            </a>
+          </div>
+        </div>
       </section>
 
       <section className="mt-12 grid gap-6 lg:grid-cols-[0.86fr,1.14fr]">
@@ -167,6 +226,10 @@ export default function LandingPage() {
               <p className="text-sm text-slate-400">Weekend</p>
               <h3 className="mt-2 font-semibold text-white">Drop one educational breakdown or review</h3>
             </div>
+          </div>
+          <div className="mt-6 rounded-[1.5rem] border border-gold/20 bg-gold/10 px-4 py-4 text-sm text-gold">
+            Fastest daily update:
+            edit `dailyTradeIdea` in `client/src/data/siteContent.js`
           </div>
         </div>
       </section>

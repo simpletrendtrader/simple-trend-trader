@@ -1,3 +1,27 @@
+// EASY UPDATE FILE
+// Edit this file whenever you want to change the website text, trade ideas, contact links, or notes.
+
+export const siteBrand = {
+  name: 'SIMPLE TREND TRADER',
+  tagline: 'Trade Smart. Trade Simple.',
+  heroLabel: 'SIMPLE TREND TRADER',
+  heroKicker: 'For traders who want calm, clean conviction.',
+  heroTitle: 'A modern trading website for publishing market ideas with style, clarity, and premium presence.',
+  heroDescription:
+    'SIMPLE TREND TRADER is a polished educational trading brand built to share trade ideas, explain market logic, build trust, and introduce a future VIP path without unnecessary complexity first.'
+};
+
+export const contactInfo = {
+  email: 'hello@simpletrendtrader.com',
+  whatsapp: 'https://wa.me/910000000000',
+  telegram: 'https://t.me/simpletrendtrader',
+  instagram: 'https://instagram.com/simpletrendtrader',
+  primaryCtaLabel: 'Join The Community',
+  primaryCtaHref: 'https://t.me/simpletrendtrader',
+  secondaryCtaLabel: 'Email Directly',
+  secondaryCtaHref: 'mailto:hello@simpletrendtrader.com'
+};
+
 export const marketTapeFallback = [
   'EURUSD updating...',
   'GBPUSD updating...',
@@ -5,6 +29,19 @@ export const marketTapeFallback = [
   'XAUUSD updating...',
   'BTCUSD updating...'
 ];
+
+export const dailyTradeIdea = {
+  label: 'Today\'s Trade Idea',
+  pair: 'XAUUSD',
+  dateLabel: 'Updated Daily',
+  bias: 'Bullish Above 2358',
+  narrative:
+    'Gold remains constructive while the higher-low structure holds. I want patient continuation, not emotional chasing. The best trade is still the clean one that respects confirmation.',
+  entryZone: '2358 - 2364',
+  invalidation: 'Below 2350',
+  targets: '2382 / 2396',
+  executionNote: 'Best during London and early New York if momentum confirms.'
+};
 
 export const featuredIdeas = [
   {
