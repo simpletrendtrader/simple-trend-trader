@@ -1,5 +1,5 @@
-// EASY UPDATE FILE
-// Edit this file whenever you want to change the website text, trade ideas, contact links, videos, or notes.
+// MAIN WEBSITE CONTENT
+// Edit this file for general website text like hero text, contact links, featured ideas, and weekly note.
 
 export const siteBrand = {
   name: 'SIMPLE TREND TRADER',
@@ -29,19 +29,6 @@ export const marketTapeFallback = [
   'XAUUSD updating...',
   'BTCUSD updating...'
 ];
-
-export const dailyTradeIdea = {
-  label: 'Today\'s Trade Idea',
-  pair: 'XAUUSD',
-  dateLabel: 'Updated Daily',
-  bias: 'Bullish Above 2358',
-  narrative:
-    'Gold remains constructive while the higher-low structure holds. I want patient continuation, not emotional chasing. The best trade is still the clean one that respects confirmation.',
-  entryZone: '2358 - 2364',
-  invalidation: 'Below 2350',
-  targets: '2382 / 2396',
-  executionNote: 'Best during London and early New York if momentum confirms.'
-};
 
 export const featuredIdeas = [
   {
@@ -73,30 +60,6 @@ export const featuredIdeas = [
     invalidation: 'Sustain above 1.0864',
     target: '1.0788 / 1.0765',
     timeframe: 'Intraday continuation'
-  }
-];
-
-export const lessonTracks = [
-  {
-    category: 'Market Structure',
-    title: 'How To Read The Trend Without Overthinking',
-    description:
-      'A simplified framework for trend, pullback, continuation, and invalidation so every idea is grounded in structure first.',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-  },
-  {
-    category: 'Risk Management',
-    title: 'Building A Rule-Based Risk Model',
-    description:
-      'Position sizing, session selection, and maximum daily loss rules that protect your confidence as much as your capital.',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-  },
-  {
-    category: 'Trade Psychology',
-    title: 'Staying Calm When Price Moves Fast',
-    description:
-      'A trader-first mental model for patience, execution, and recovery after a loss so you can stay consistent longer.',
-    videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
   }
 ];
 

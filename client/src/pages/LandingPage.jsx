@@ -3,17 +3,17 @@ import { ArrowRight, ChartNoAxesCombined, GraduationCap, NotebookPen, Radar, Spa
 import { Link } from 'react-router-dom';
 import IdeaSpotlightCard from '../components/IdeaSpotlightCard.jsx';
 import LessonPreviewCard from '../components/LessonPreviewCard.jsx';
+import { dailyTradeIdea } from '../data/dailyTradeIdea.js';
 import {
   contactInfo,
-  dailyTradeIdea,
   featuredIdeas,
-  lessonTracks,
   manifesto,
   pillars,
   siteBrand,
   stats,
   weeklyNote
 } from '../data/siteContent.js';
+import { lessonTracks } from '../data/youtubeLessons.js';
 
 const featureCards = [
   { title: 'Trade Idea Publishing', copy: 'Present market ideas with context, invalidation, and clear educational framing.', icon: ChartNoAxesCombined },
@@ -229,7 +229,7 @@ export default function LandingPage() {
           </div>
           <div className="mt-6 rounded-[1.5rem] border border-gold/20 bg-gold/10 px-4 py-4 text-sm text-gold">
             Fastest daily update:
-            edit `dailyTradeIdea` in `client/src/data/siteContent.js`
+            edit `client/src/data/dailyTradeIdea.js`
           </div>
         </div>
       </section>

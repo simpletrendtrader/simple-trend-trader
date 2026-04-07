@@ -1,62 +1,54 @@
 # SIMPLE TREND TRADER Content Guide
 
-The fastest place to update your website content is:
+You now have 3 simpler files:
+
+## 1. Daily trade update
+
+- `client/src/data/dailyTradeIdea.js`
+
+Use this when you want to update today's main trade idea.
+
+## 2. YouTube education videos
+
+- `client/src/data/youtubeLessons.js`
+
+Use this when you want to add or edit education videos.
+
+## 3. General website content
 
 - `client/src/data/siteContent.js`
 
-## What to edit there
+Use this for:
+- hero text
+- contact links
+- featured trade ideas
+- weekly note
+- pricing text
+- general website copy
 
-- `siteBrand`
-  - main hero text
-  - tagline
-  - brand positioning copy
+## Easiest daily workflow
 
-- `dailyTradeIdea`
-  - today's featured setup
-  - entry zone
-  - invalidation
-  - targets
-  - execution note
+If you only want to update today's setup:
 
-- `featuredIdeas`
-  - your additional trade ideas page cards
+1. Open:
+   - `client/src/data/dailyTradeIdea.js`
+2. Edit the text
+3. Save
+4. Run:
 
-- `lessonTracks`
-  - academy/education card content
-  - YouTube video links
+```bash
+git add client/src/data/dailyTradeIdea.js
+git commit -m "Update daily trade idea"
+git push origin main
+```
 
-- `contactInfo`
-  - email
-  - WhatsApp link
-  - Telegram link
-  - Instagram link
-  - join CTA labels and URLs
+## How to update YouTube lessons
 
-- `weeklyNote`
-  - editorial market note content
+Open:
 
-## Typical update workflow
+- `client/src/data/youtubeLessons.js`
 
-1. Edit `client/src/data/siteContent.js`
-2. Save the file
-3. Commit and push
-4. Vercel redeploys automatically
-
-## Most frequent daily update
-
-If you only want to update one thing each day, edit:
-
-- `dailyTradeIdea`
-
-That section is designed to be your easiest recurring publishing block.
-
-## How to add YouTube lessons
-
-In `client/src/data/siteContent.js`, find:
-
-- `lessonTracks`
-
-Each lesson now supports:
+Each lesson supports:
 
 - `category`
 - `title`
@@ -67,17 +59,38 @@ Example:
 
 ```js
 {
-  category: 'Market Structure',
-  title: 'How To Read The Trend Without Overthinking',
-  description: 'Your lesson summary here',
+  category: 'Gold Trading',
+  title: 'How I Analyse XAUUSD Structure',
+  description: 'Simple breakdown of trend and confirmation.',
   videoUrl: 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID'
 }
 ```
 
-After saving:
+Then run:
 
-1. `git add client/src/data/siteContent.js`
-2. `git commit -m "Update education videos"`
-3. `git push origin main`
+```bash
+git add client/src/data/youtubeLessons.js
+git commit -m "Update YouTube lessons"
+git push origin main
+```
+
+## When to use siteContent.js
+
+Open:
+
+- `client/src/data/siteContent.js`
+
+Use this for less frequent updates such as:
+- brand text
+- contact links
+- featured ideas
+- weekly note
+
+## After every update
+
+After `git push origin main`:
+
+- wait 1 to 2 minutes
+- refresh the website
 
 Vercel will redeploy automatically.
