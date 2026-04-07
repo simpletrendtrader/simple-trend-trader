@@ -1,85 +1,43 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PricingCard from '../components/PricingCard.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
-import { useAuth } from '../context/AuthContext.jsx';
-import { useFetch } from '../hooks/useFetch.js';
-import { apiRequest } from '../lib/api.js';
+import { memberships } from '../data/siteContent.js';
 
 export default function PricingPage() {
-  const navigate = useNavigate();
-  const { user, token } = useAuth();
-  const { data, loading, error } = useFetch('/billing/plans');
-
-  const startUpgrade = async () => {
-    if (!user) {
-      navigate('/signup');
-      return;
-    }
-
-    const response = await apiRequest('/billing/checkout', {
-      method: 'POST',
-      token,
-      body: { plan: 'vip' }
-    });
-
-    window.location.href = response.checkoutUrl;
-  };
-
-  const openPortal = async () => {
-    const response = await apiRequest('/billing/portal', {
-      method: 'POST',
-      token
-    });
-
-    window.location.href = response.portalUrl;
-  };
-
   return (
-    <div className="px-4 py-10 sm:px-6 lg:px-8">
+    <div className="px-2 py-10">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
-          eyebrow="Membership"
-          title="Choose Your Trading Access"
-          description="Start free, then upgrade to VIP when you want premium signals and the full education vault."
+          eyebrow="VIP Positioning"
+          title="Show A Premium Path Without Needing Complex Tech First"
+          description="This page gives your brand a monetization-ready feel today. You can add payments and gated access later when you want to scale it."
         />
-        {loading && <p className="text-sm text-slate-400">Loading plans...</p>}
-        {error && <p className="rounded-2xl border border-rose-500/20 bg-rose-500/10 px-4 py-3 text-sm text-rose-300">{error}</p>}
         <div className="grid gap-5 md:grid-cols-2">
-          {(data.plans || []).map((plan) => (
+          {memberships.map((plan) => (
             <PricingCard
-              key={plan.id}
+              key={plan.name}
               plan={plan}
               action={
-                plan.id === 'vip' ? (
-                  user?.membership === 'vip' ? (
-                    <button
-                      type="button"
-                      onClick={openPortal}
-                      className="w-full rounded-2xl border border-gold/25 bg-gold/10 px-5 py-3 font-semibold text-gold"
-                    >
-                      Manage Billing
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={startUpgrade}
-                      className="w-full rounded-2xl bg-gold px-5 py-3 font-semibold text-night"
-                    >
-                      Upgrade to VIP
-                    </button>
-                  )
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => navigate(user ? '/app' : '/signup')}
-                    className="w-full rounded-2xl border border-white/10 px-5 py-3 font-semibold text-white"
-                  >
-                    {user ? 'Open Dashboard' : 'Start Free'}
-                  </button>
-                )
+                <Link
+                  to="/contact"
+                  className={`block w-full rounded-2xl px-5 py-3 text-center font-semibold ${
+                    plan.name === 'VIP Circle' ? 'bg-gold text-night' : 'border border-white/10 text-white'
+                  }`}
+                >
+                  {plan.name === 'VIP Circle' ? 'Request VIP Access' : 'Explore The Site'}
+                </Link>
               }
             />
           ))}
+        </div>
+        <div className="mt-8 glass-panel rounded-[2rem] p-8">
+          <p className="text-xs uppercase tracking-[0.35em] text-gold">Recommended rollout</p>
+          <h3 className="mt-4 font-display text-3xl text-white">Launch the brand website first, then add private members later.</h3>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-300">
+            This keeps the experience beautiful and low-friction right now. Once your content cadence is strong
+            and audience demand is clear, the site can expand into a proper VIP product with gated lessons and
+            premium market commentary.
+          </p>
         </div>
       </div>
     </div>

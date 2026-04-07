@@ -27,15 +27,21 @@ Required frontend secret:
 
 ## 2. Push to GitHub
 
-From the project root:
+This repo is already initialized locally on the `main` branch with the first commit created.
+
+Create a new empty GitHub repository, then connect and push:
 
 ```bash
-git init
-git add .
-git commit -m "Initial SIMPLE TREND TRADER platform"
+git remote add origin https://github.com/YOUR_USERNAME/simple-trend-trader.git
+git push -u origin main
 ```
 
-Then create a GitHub repo and push it.
+If you prefer SSH:
+
+```bash
+git remote add origin git@github.com:YOUR_USERNAME/simple-trend-trader.git
+git push -u origin main
+```
 
 ## 3. Deploy the Backend to Render
 
